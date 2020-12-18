@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ichiraku Ramen Shop</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="javascript/javascript.js" charset="utf-8"> </script>
+
+
+<body background="https://i.imgur.com/85sTTpR.jpg">	
+
+<center><h2>Cooking! Please wait.</h2>
+<br><img src="images/cooking.gif">
+
+<script type="text/javascript">
+  function countDown(sec, elem) {
+  var element = document.getElementById(elem);
+  element.innerHTML = "Time left: " + sec + " seconds";
+   if (sec < 1) {
+    clearTimeout(timer); //clear timeout
+    element.innerHTML = 'Time is up!';
+    document.getElementById("<%=btnPresentAnswer.ClientID %>").style.visibility = "visible";
+                }
+    sec--;
+    var timer = setTimeout('countDown(' + sec + ', "' + elem + '")', 1000);
+
+
+                }
+</script>
+<div id="status"></div>
+<script type="text/javascript">
+    countDown(10, "status");
+</script>
+
+<button id="<%=btnPresentAnswer.ClientID %>" style="visibility:hidden" onclick="document.location='serving.html'">Proceed</button>
+
+</center>
+
+
+
+</body>
+
+
+</html>
