@@ -19,7 +19,7 @@
    if (sec < 1) {
     clearTimeout(timer); //clear timeout
     element.innerHTML = 'Time is up!';
-    document.getElementById("<%=btnPresentAnswer.ClientID %>").style.visibility = "visible";
+    document.getElementById("countDownButton").style.visibility = "visible";
                 }
     sec--;
     var timer = setTimeout('countDown(' + sec + ', "' + elem + '")', 1000);
@@ -32,7 +32,7 @@
     countDown(10, "status");
 </script>
 
-<button id="<%=btnPresentAnswer.ClientID %>" style="visibility:hidden" onclick="document.location='serving.html'">Proceed</button>
+<button id="countDownButton" style="visibility:hidden" onclick="document.location='serving.html'">Proceed</button>
 
 </center>
 
